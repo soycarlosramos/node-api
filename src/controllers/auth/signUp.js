@@ -13,7 +13,6 @@ const signUp = async (req, res) => {
 		res.json({ message: 'User created!' })
 		return
 	} catch (error) {
-		console.error(error)
 		if (error.code === 'ER_DUP_ENTRY') {
 			res.status(403)
 			res.json({ message: 'User already exists' })
