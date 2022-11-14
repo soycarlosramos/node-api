@@ -1,3 +1,3 @@
-const userRoutes = require('../routes/users')
+const auth = require('../routes/auth')
 
-module.exports = { userRoutes }
+module.exports = { auth }
