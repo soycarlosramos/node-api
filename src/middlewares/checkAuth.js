@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const checkAuth = async (req, res, netx) => {
+const checkAuth = async (req, res, next) => {
 	const { authorization } = req.headers
 
 	const token = authorization && authorization.toLowerCase().startsWith('bearer ')
@@ -16,7 +16,7 @@ const checkAuth = async (req, res, netx) => {
 	try {
 		const user = await jwt.verify(token, process.env.SECRET_KEY)
 		req.user = user
-		netx()
+		next()
 	} catch (error) {
 		res.status(500)
 		res.json({ message: 'Error token validation' })
