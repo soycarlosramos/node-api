@@ -9,19 +9,19 @@ pool.getConnection((error, conn) => {
 	if (error) {
 		if (error.code === 'ECONNREFUSED') {
 			console.error('Conexión a base de datos rechazada')
-			console.error(error)
+			console.error(`Error code: ${error.code}`)
 			return
 		}
 
 		if (error.code === 'PROTOCOL_CONNECTION_LOST') {
 			console.error('Conexión a base de datos cerrada')
-			console.error(error)
+			console.error(`Error code: ${error.code}`)
 			return
 		}
 
 		if (error.code === 'ER_CON_COUNT_ERROR') {
 			console.error('La base de datos tiene muchas conexiones')
-			console.error(error)
+			console.error(`Error code: ${error.code}`)
 			return
 		}
 	}
