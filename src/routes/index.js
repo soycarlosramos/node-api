@@ -1,4 +1,4 @@
-const auth = require('../routes/auth')
-const users = require('../routes/users')
+import auth from '../routes/auth/index.js'
+import users from '../routes/users/index.js'
 
-module.exports = { auth, users }
+export { auth, users }

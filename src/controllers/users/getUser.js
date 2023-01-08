@@ -4,4 +4,4 @@ const getUser = async (req, res) => {
 	res.json(user)
 }
 
-module.exports = getUser
+export default getUser

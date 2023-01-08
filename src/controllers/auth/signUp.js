@@ -1,5 +1,5 @@
-const pool = require('../../conn/pool')
-const hashPassword = require('../../utils/hashPassword')
+import pool from '../../conn/pool.js'
+import hashPassword from '../../utils/hashPassword.js'
 
 const signUp = async (req, res) => {
 	const { email, password } = req.body
@@ -21,4 +21,4 @@ const signUp = async (req, res) => {
 	}
 }
 
-module.exports = signUp
+export default signUp

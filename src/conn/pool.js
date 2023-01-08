@@ -1,7 +1,6 @@
-const mysql = require('mysql')
-const keys = require('./keys')
-const { promisify } = require('util')
-
+import mysql from 'mysql'
+import keys from './keys.js'
+import { promisify } from 'util'
 
 const pool = mysql.createPool(keys)
 
@@ -35,4 +34,4 @@ pool.getConnection((error, conn) => {
 
 pool.query = promisify(pool.query)
 
-module.exports = pool
+export default pool

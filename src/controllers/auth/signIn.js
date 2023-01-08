@@ -1,6 +1,6 @@
-const pool = require('../../conn/pool')
-const generateToken = require('../../utils/generateToken')
-const verifyPassword = require('../../utils/verifyPassword')
+import pool from '../../conn/pool.js'
+import generateToken from '../../utils/generateToken.js'
+import verifyPassword from '../../utils/verifyPassword.js'
 
 const signIn = async (req, res) => {
 	const { email, password } = req.body
@@ -39,4 +39,4 @@ const signIn = async (req, res) => {
 	}
 }
 
-module.exports = signIn
+export default signIn

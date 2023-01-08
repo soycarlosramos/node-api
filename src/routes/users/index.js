@@ -1,10 +1,10 @@
-const { Router } = require('express')
+import { Router } from 'express'
 const router =  Router()
 
-const getUser = require('../../controllers/users/getUser')
-const checkAuth = require('../../middlewares/checkAuth')
+import getUser from '../../controllers/users/getUser.js'
+import checkAuth from '../../middlewares/checkAuth.js'
 
 // Routes
 router.get('/users/profile', checkAuth, getUser)
 
-module.exports = router
+export default router

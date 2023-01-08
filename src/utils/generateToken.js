@@ -1,11 +1,10 @@
-const jwt = require('jsonwebtoken')
+import jwt  from 'jsonwebtoken'
 
 const generateToken = async claims => {
 	delete claims.password
 	delete claims.date
 
 	// claims
-
 	claims = JSON.stringify({
 		...claims,
 		iat: Math.floor(Date.now() / 1000),
@@ -19,7 +18,7 @@ const generateToken = async claims => {
 		}
 	}
 
-	return await jwt.sign(claims, process.env.SECRET_KEY, options)
+	return await jwt.sign(claims, process.env.JWT_SECRET_KEY, options)
 }
 
-module.exports = generateToken
+export default generateToken

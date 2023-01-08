@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+import bcrypt from 'bcrypt'
 
 const hashPassword = async password => {
 
@@ -10,4 +10,4 @@ const hashPassword = async password => {
 	}
 }
 
-module.exports = hashPassword
+export default hashPassword
